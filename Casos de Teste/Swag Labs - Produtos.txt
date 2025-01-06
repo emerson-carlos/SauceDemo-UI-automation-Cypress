@@ -1,0 +1,33 @@
+Swag Labs - Produtos
+
+História:
+	Como um usuário do site Swag Labs
+	Quero acessar os produtos do site
+	Para ter acesso a suas informações
+	
+CT01: deve acessar informações do produto ao clicar no nome
+	Dado que estou logado na página de produtos da Swag Labs
+	Quando clico no nome de um produto
+	Então devo ser redirecionado para a página de informações do produto
+	
+CT02: deve acessar informações do produto ao clicar na imagem
+	Dado que estou logado na página de produtos da Swag Labs
+	Quando clico na imagem de um produto
+	Então devo ser redirecionado para a página de informações do produto
+	
+CT03: deve retornar para a página de produtos a partir da página de um produto
+	Dado que estou logado na página de produtos da Swag Labs
+	E acesso a página de informações de um produto
+	Quando clico no link "Back to products"
+	Então devo ser redirecionado para a página de produtos
+	
+CT04: deve retornar a página de produtos pelo botão na página do carrinho de compras
+	Dado que estou logado na página do carrinho de compras
+	Quando clico no botão "Continue Shopping"
+	Então devo ser redirecionado para a página de produtos
+	
+CT05: deve acessar informações do produto a partir da página do carrinho de compras
+	Dado que estou logado na página do carrinho de compras
+	E tenho um produto no carrinho
+	Quando clico no nome do produto
+	Então devo ser redirecionado para a página do produto

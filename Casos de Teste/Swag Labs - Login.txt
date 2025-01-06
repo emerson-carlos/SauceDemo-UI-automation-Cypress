@@ -1,0 +1,57 @@
+Swag Labs - Login
+
+História:
+	Como um usuário do site Swag Labs
+	Quero fazer login
+	Para ter acesso aos produtos do site
+
+CT01: deve fazer login com sucesso
+	Dado que acesso o site “https://www.saucedemo.com/”
+	E informo um usuário cadastrado
+	E informo a senha válida para o usuário
+	Quando clico no botão de login
+	Então devo ser redirecionado para a página de produtos
+
+CT02: não deve fazer login com usuário não cadastrado
+	Dado que acesso o site “https://www.saucedemo.com/”
+	E informo um usuário não cadastrado
+	E informo uma senha
+	Quando clico no botão de login
+	Então devo ver a mensagem “Epic sadface: Username and password do not match any user in this service”
+
+CT03: não deve fazer login com senha de usuário inválida	
+	Dado que acesso o site “https://www.saucedemo.com/”
+	E informo um usuário cadastrado
+	E informo uma senha inválida para o usuário
+	Quando clico no botão de login
+	Então devo ver a mensagem “Epic sadface: Username and password do not match any user in this service”
+
+CT04: não deve fazer login sem informar usuário e senha
+	Dado que acesso o site “https://www.saucedemo.com/”
+	E não informo um usuário e senha
+	Quando clico no botão de login
+	Então devo ver a mensagem “Epic sadface: Username is required”
+
+CT05: não deve fazer login sem informar usuário
+	Dado que acesso o site “https://www.saucedemo.com/”
+	E não informo um usuário
+	E informo uma senha
+	Quando clico no botão de login
+	Então devo ver a mensagem “Epic sadface: Username is required”
+
+
+CT06: não deve fazer login sem informar senha
+	Dado que acesso o site “https://www.saucedemo.com/”
+	E informo um usuário
+	E não informo uma senha
+	Quando clico no botão de login
+	Então devo ver a mensagem “Epic sadface: Password is required”
+	
+CT07: deve remover mensagem de erro da tela pelo botão
+	Dado que acesso o site “https://www.saucedemo.com/”
+	E não informo um usuário e senha
+	E clico no botão de login
+	E retorna uma mensagem de erro
+	Quando clico no botão para fechar a mensagem
+	Então não devo mais ver a mensagem de erro
+	

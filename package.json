@@ -1,0 +1,11 @@
+{
+  "name": "SwagLabs_UI_automation",
+  "version": "1.0.0",
+  "description": "Automação UI do site Swag Labs com cypress",
+  "main": "index.js",
+  "author": "Emerson C Batista",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "12.2.0"
+  }
+}

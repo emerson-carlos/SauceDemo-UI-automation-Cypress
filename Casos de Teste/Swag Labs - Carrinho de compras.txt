@@ -1,0 +1,53 @@
+Swag Labs - Carrinho de compras
+
+História:
+	Como um usuário do site Swag Labs
+	Quero poder adicionar e remover produtos do carrinho de compras
+	Para poder realizar compras no site
+
+CT01: deve acessar a página do carrinho de compras
+	Dado que estou logado na página de produtos da Swag Labs
+	Quando clico no botão do carrinho de compras
+	Então devo ser redirecionado para a página do carrinho de compras
+
+CT02: deve adicionar um produto no carrinho de compras na página de produtos
+	Dado que estou logado na página de produtos da Swag Labs
+	Quando clico no botão "Add to cart" de um produto
+	Então o produto deve ser adicionado ao carrinho de compras
+	
+CT03: deve remover um produto no carrinho de compras na página de produtos
+	Dado que estou logado na página de produtos da Swag Labs
+	E tenho um produto no carrinho de compras
+	Quando clico no botão "Remove" deste produto
+	Então o produto deve ser removido do carrinho de compras
+	
+CT04: deve adicionar um produto no carrinho de compras de sua página de informações
+	Dado que estou logado na página de produtos da Swag Labs
+	E acesso a página de informações de um produto
+	Quando clico no botão "Add to cart" de um produto
+	Então o produto deve ser adicionado ao carrinho de compras
+	
+CT05: deve remover um produto do carrinho de compras na sua página de informações
+	Dado que estou logado na página de produtos da Swag Labs
+	E tenho um produto no carrinho de compras
+	E acesso a página de informações deste produto
+	Quando clico no botão "Remove" deste produto
+	Então o produto deve ser removido do carrinho de compras
+	
+CT06: deve remover um produto do carrinho de compras a partir da página do carrinho
+	Dado que estou logado na página do carrinho de compras
+	E tenho um produto no carrinho
+	Quando clico no botão "Remove" deste produto
+	Então o produto deve ser removido do carrinho de compras
+	
+CT07: deve adicionar mais de um produto ao carrinho de compras
+	Dado que estou logado na página de produtos da Swag Labs
+	E tenho um produto no carrinho de compras
+	Quando clico no botão "Add to cart" de outro produto
+	Então ele também deve ser adicionado ao carrinho de compras junto ao outro produto
+
+CT08: deve remover um produto de uma lista de produtos no carrinho de compras
+	Dado que estou logado na página do carrinho de compras
+	E tenho mais de um produto no carrinho
+	Quando clico no botão "Remove" de um dos produtos
+	Então apenas este produto deve ser removido do carrinho de compras
