@@ -11,7 +11,7 @@ jobs:
   cypress-electron-tests:
     runs-on: ubuntu-latest
     container:
-      image: cypress/included:9.2.0
+      image: cypress/included:14.0.0
       options: --user 1001
     steps:
       - name: Get code
