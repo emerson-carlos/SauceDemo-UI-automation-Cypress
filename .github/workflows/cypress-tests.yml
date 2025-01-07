@@ -10,6 +10,9 @@ on:
 jobs:
   cypress-electron-tests:
     runs-on: ubuntu-latest
+    container:
+      image: cypress/included:9.2.0
+      options: --user 1001
     steps:
       - name: Get code
         uses: actions/checkout@v4.2.2
