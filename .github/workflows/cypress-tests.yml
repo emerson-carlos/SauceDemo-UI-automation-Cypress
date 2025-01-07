@@ -5,7 +5,7 @@ on:
     inputs:
       cli:
         description: Run by cypress command line
-        default: npx cypress run
+        default: yarn cypress run
 
 jobs:
   cypress-electron-tests:
@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v4.2.2
 
       - name: Install dependencies
-        run: npm install
+        run: yarn install
 
       - name: Run E2E tests
         run: ${{ github.event.inputs.cli }}
