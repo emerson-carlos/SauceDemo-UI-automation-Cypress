@@ -17,6 +17,12 @@ jobs:
       - name: Get code
         uses: actions/checkout@v4.2.2
 
+      - name: Print working directory
+        run: pwd
+
+      - name: List test files
+        run: ls -R cypress/e2e
+
       - name: Install dependencies
         run: npm install
 
