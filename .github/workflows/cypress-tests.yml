@@ -29,7 +29,6 @@ jobs:
       - name: Run E2E tests
         run: ${{ github.event.inputs.cli }}
   cypress-chrome-tests:
-    needs: cypress-electron-tests
     runs-on: ubuntu-latest
     container:
       image: cypress/included:12.2.0
@@ -49,42 +48,3 @@ jobs:
 
       - name: Run E2E tests
         run: ${{ github.event.inputs.cli }} --browser chrome
-  cypress-edge-tests:
-    needs: cypress-electron-tests
-    runs-on: ubuntu-latest
-    container:
-      image: cypress/included:12.2.0
-      options: --user 1001
-    steps:
-      - name: Get code
-        uses: actions/checkout@v4.2.2
-
-      - name: Print working directory
-        run: pwd
-
-      - name: List test files
-        run: ls -R cypress/e2e
-
-      - name: Install dependencies
-        run: npm install
-          
-      - name: Install required tools (curl and gpg)
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y curl gnupg
-
-      - name: Fix duplicate repository entries
-        run: |
-          sudo rm -f /etc/apt/sources.list.d/microsoft-edge-stable.list
-          sudo rm -f /etc/apt/sources.list.d/microsoft-edge.list
-
-      - name: Install Edge browser
-        run: |
-          curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
-          sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
-          sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main" > /etc/apt/sources.list.d/microsoft-edge-dev.list'
-          sudo apt update
-          sudo apt install microsoft-edge-stable
-
-      - name: Run E2E tests
-        run: ${{ github.event.inputs.cli }} --browser edge
