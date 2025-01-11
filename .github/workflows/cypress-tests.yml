@@ -28,3 +28,44 @@ jobs:
 
       - name: Run E2E tests
         run: ${{ github.event.inputs.cli }}
+  cypress-chrome-tests:
+    runs-on: ubuntu-latest
+    container:
+      image: cypress/included:12.2.0
+      options: --user 1001
+    steps:
+      - name: Get code
+        uses: actions/checkout@v4.2.2
+
+      - name: Print working directory
+        run: pwd
+
+      - name: List test files
+        run: ls -R cypress/e2e
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run E2E tests
+        run: ${{ github.event.inputs.cli }} --browser chrome
+  cypress-firefox-tests:
+    runs-on: ubuntu-latest
+    container:
+      image: cypress/included:12.2.0
+      options: --user 1001
+    steps:
+      - name: Get code
+        uses: actions/checkout@v4.2.2
+
+      - name: Print working directory
+        run: pwd
+
+      - name: List test files
+        run: ls -R cypress/e2e
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run E2E tests
+        run: ${{ github.event.inputs.cli }} --browser firefox
+
