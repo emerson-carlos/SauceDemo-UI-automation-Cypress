@@ -67,11 +67,16 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-
+          
       - name: Install required tools (curl and gpg)
         run: |
-          apt-get update
-          apt-get install -y curl gnupg
+          sudo apt-get update
+          sudo apt-get install -y curl gnupg
+
+      - name: Fix duplicate repository entries
+        run: |
+          sudo rm -f /etc/apt/sources.list.d/microsoft-edge-stable.list
+          sudo rm -f /etc/apt/sources.list.d/microsoft-edge.list
 
       - name: Install Edge browser
         run: |
